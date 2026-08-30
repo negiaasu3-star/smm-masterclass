@@ -1,84 +1,153 @@
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SMM Agency & Website Masterclass @ ₹52</title>
+    <title>SMM Business Masterclass</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
-        body { background-color: #f4f7f6; color: #333; line-height: 1.6; padding: 15px; }
-        .container { max-width: 500px; margin: 0 auto; background: #ffffff; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); overflow: hidden; }
-        .header { background: #004d40; color: #fff; padding: 20px; text-align: center; }
-        .header h1 { font-size: 20px; color: #ffeb3b; margin-bottom: 8px; }
-        .header p { font-size: 14px; }
-        .banner-box { padding: 15px; text-align: center; }
-        .banner-box img { width: 100%; border-radius: 8px; }
-        .form-section { padding: 20px; }
-        .form-group { margin-bottom: 15px; }
-        .form-group label { display: block; font-weight: bold; margin-bottom: 5px; font-size: 14px; }
-        .form-group input { width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 6px; font-size: 15px; }
-        .btn-submit { width: 100%; background: #00c853; color: #fff; font-size: 18px; font-weight: bold; padding: 14px; border: none; border-radius: 6px; cursor: pointer; transition: 0.3s; }
-        .btn-submit:hover { background: #00e676; }
-        .details-box { background: #e8f5e9; padding: 15px; margin: 15px 20px; border-radius: 8px; border-left: 5px solid #00c853; }
-        .details-box h3 { font-size: 16px; margin-bottom: 8px; color: #1b5e20; }
-        .details-box ul { list-style-type: none; }
-        .details-box li { font-size: 13px; margin-bottom: 6px; position: relative; padding-left: 20px; }
-        .details-box li::before { content: "✔"; position: absolute; left: 0; color: #00c853; }
-        .footer { text-align: center; font-size: 12px; color: #777; padding: 15px; border-top: 1px solid #eee; }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Inter', sans-serif; }
+        body { background-color: #f3f4f6; color: #111827; line-height: 1.5; display: flex; justify-content: center; }
+        .container { max-width: 480px; width: 100%; background: #ffffff; min-height: 100vh; position: relative; padding-bottom: 20px; box-shadow: 0 0 15px rgba(0,0,0,0.05); }
+        
+        /* Top Header */
+        .main-content { padding: 24px 20px; }
+        .main-title { font-size: 26px; font-weight: 800; color: #1f2937; line-height: 1.3; margin-bottom: 12px; letter-spacing: -0.5px; }
+        .subtitle { font-size: 16px; color: #4b5563; margin-bottom: 24px; font-weight: 500; }
+        
+        /* Profile Card */
+        .profile-card { display: flex; align-items: center; background: #ffffff; border: 1px solid #e5e7eb; border-radius: 12px; padding: 16px; margin-bottom: 28px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05); }
+        .profile-img { width: 60px; height: 60px; border-radius: 50%; background-color: #004d40; color: white; display: flex; align-items: center; justify-content: center; font-size: 24px; font-weight: bold; margin-right: 16px; flex-shrink: 0; object-fit: cover; }
+        .profile-info h3 { font-size: 16px; font-weight: 700; margin-bottom: 4px; color: #111827; }
+        .profile-info p { font-size: 13px; color: #6b7280; line-height: 1.4; }
+        
+        /* Form */
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; font-size: 14px; font-weight: 600; margin-bottom: 8px; color: #374151; }
+        .form-group label span { color: #ef4444; }
+        .form-group input { width: 100%; padding: 14px; border: 1px solid #d1d5db; border-radius: 8px; font-size: 15px; outline: none; transition: 0.2s; }
+        .form-group input:focus { border-color: #3b82f6; box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1); }
+        .whatsapp-input-wrapper { display: flex; align-items: center; border: 1px solid #d1d5db; border-radius: 8px; overflow: hidden; background: #fff; }
+        .country-code { padding: 14px; background: #f9fafb; border-right: 1px solid #d1d5db; display: flex; align-items: center; font-size: 15px; }
+        .whatsapp-input-wrapper input { border: none; border-radius: 0; padding: 14px; flex-grow: 1; }
+        .whatsapp-input-wrapper input:focus { box-shadow: none; }
+        
+        .whatsapp-update { font-size: 13px; color: #6b7280; margin-top: 8px; display: flex; align-items: center; gap: 6px; }
+        
+        /* Button */
+        .btn-submit { width: 100%; background: #1d4ed8; color: #fff; font-size: 18px; font-weight: 600; padding: 16px; border: none; border-radius: 8px; cursor: pointer; margin-top: 10px; margin-bottom: 12px; }
+        .payment-icons { text-align: center; margin-bottom: 24px; font-size: 12px; color: #6b7280; font-weight: 600; letter-spacing: 1px; }
+        
+        /* Poster */
+        .poster-wrapper img { width: 100%; border-radius: 12px; margin-bottom: 24px; border: 1px solid #e5e7eb; }
+        
+        /* Timings */
+        .timings { margin-bottom: 24px; }
+        .timings h3 { font-size: 18px; margin-bottom: 12px; color: #1f2937; }
+        .timing-row { display: flex; align-items: center; gap: 10px; color: #4b5563; font-size: 15px; margin-bottom: 8px; }
+        
+        /* Checklist */
+        .checklist-section h3 { font-size: 20px; font-weight: 700; line-height: 1.4; margin-bottom: 16px; color: #111827; }
+        .checklist { list-style: none; margin-bottom: 32px; }
+        .checklist li { display: flex; align-items: flex-start; gap: 12px; font-size: 15px; color: #374151; margin-bottom: 16px; line-height: 1.5; }
+        .checklist li::before { content: "✅"; font-size: 18px; flex-shrink: 0; margin-top: 2px; }
+        
+        /* Contact & Footer */
+        .contact-section h3 { font-size: 18px; font-weight: 600; margin-bottom: 12px; }
+        .contact-row { display: flex; align-items: center; gap: 10px; color: #4b5563; font-size: 15px; margin-bottom: 10px; }
+        .contact-row svg { width: 20px; height: 20px; color: #6b7280; }
+        
+        .footer-links { display: flex; justify-content: center; gap: 15px; border-top: 1px solid #e5e7eb; padding-top: 20px; margin-top: 20px; }
+        .footer-links a { color: #6b7280; text-decoration: none; font-size: 12px; }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <!-- Header Section -->
-    <div class="header">
-        <h1>SMM Agency & Website Masterclass</h1>
-        <p>बिना किसी कोडिंग के अपनी SMM वेबसाइट बनाएं और डेली इनकम शुरू करें!</p>
-    </div>
+    <div class="main-content">
+        <h1 class="main-title">SMM Business Masterclass: How Beginners Are Making ₹30K–₹1L/Month Without Coding</h1>
+        <p class="subtitle">Register Now @ ₹52 🚀</p>
 
-    <!-- Banner / Poster Section -->
-    <div class="banner-box">
-        <!-- अपने पोस्टर की इमेज का लिंक src में डालें -->
-        <img src="poster.png" alt="SMM Masterclass Poster">
-    </div>
+        <div class="profile-card">
+            <div class="profile-img">P</div>
+            <div class="profile-info">
+                <h3>Pawan Media Service</h3>
+                <p>My Internet Pays My Bills | 500+ Active Clients | Helping Beginners Build Income Using SMM Websites</p>
+            </div>
+        </div>
 
-    <!-- Details Box -->
-    <div class="details-box">
-        <h3>इस 30 Min मास्टरक्लास में क्या सीखेंगे:</h3>
-        <ul>
-            <li>खुद की SMM वेबसाइट और पैनल सेटअप करना।</li>
-            <li>अपनी प्राइस लिस्ट सेट करना और ऑर्डर्स मैनेज करना।</li>
-            <li>पहले ही दिन से वेबसाइट पर कस्टमर्स लाने का सीक्रेट तरीका।</li>
-            <li>लाइव Q&A और WhatsApp कम्युनिटी का डायरेक्ट एक्सेस।</li>
-        </ul>
-    </div>
-
-    <!-- Registration Form -->
-    <div class="form-section">
         <form action="YOUR_PAYMENT_GATEWAY_LINK" method="GET">
             <div class="form-group">
-                <label for="name">आपका नाम (Full Name) *</label>
-                <input type="text" id="name" name="name" placeholder="अपना नाम लिखें" required>
+                <label>Name <span>*</span></label>
+                <input type="text" required>
             </div>
             <div class="form-group">
-                <label for="email">ईमेल आईडी (Email) *</label>
-                <input type="email" id="email" name="email" placeholder="अपनी ईमेल आईडी दर्ज करें" required>
+                <label>Email <span>*</span></label>
+                <input type="email" required>
             </div>
             <div class="form-group">
-                <label for="phone">व्हाट्सएप नंबर (WhatsApp Number) *</label>
-                <input type="tel" id="phone" name="phone" placeholder="10 अंकों का व्हाट्सएप नंबर" required>
+                <label>Whatsapp Number <span>*</span></label>
+                <div class="whatsapp-input-wrapper">
+                    <div class="country-code">🇮🇳</div>
+                    <input type="tel" required>
+                </div>
+                <div class="whatsapp-update">
+                    You will get updates on your <span style="color:#25D366; font-weight:bold;">💬 WhatsApp</span>
+                </div>
             </div>
-            <button type="submit" class="btn-submit">Register Now @ ₹52 ➔</button>
+            
+            <button type="submit" class="btn-submit">Register Now at ₹52</button>
+            <div class="payment-icons">
+                UPI | VISA | MasterCard | RuPay
+            </div>
         </form>
-    </div>
 
-    <!-- Footer -->
-    <div class="footer">
-        <p>Contact: support@pawanmediaservice.in</p>
-        <p>© 2026 Pawan Media Service. All Rights Reserved.</p>
+        <div class="poster-wrapper">
+            <img src="poster.png" alt="SMM Masterclass Poster">
+        </div>
+
+        <div class="timings">
+            <h3>Masterclass Timings:</h3>
+            <div class="timing-row">
+                📅 <span>Upcoming Sunday</span>
+            </div>
+            <div class="timing-row">
+                ⏰ <span>11:00 AM</span>
+            </div>
+        </div>
+
+        <div class="checklist-section">
+            <h3>In This Masterclass, I'll Show You the Exact Roadmap to Build & Monetize a SMM Panel Website</h3>
+            <ul class="checklist">
+                <li>How to build a fully automated SMM website (no coding, no technical skills required)</li>
+                <li>How to find the cheapest and best quality APIs/Services to maximize your profit margin</li>
+                <li>How to set up automated payment gateways so your website makes money while you sleep</li>
+                <li>How to get daily orders and customers even if your website is brand new</li>
+                <li>Complete pricing strategy (How to buy at ₹5 and sell at ₹50)</li>
+                <li>Real case studies of our websites earning ₹50K–₹2L+ consistently</li>
+                <li>Live demo: Domain, Hosting setup + Panel installation</li>
+                <li>Live Q&A to clear all your doubts personally</li>
+            </ul>
+        </div>
+
+        <div class="contact-section">
+            <h3>Contact Creator</h3>
+            <div class="contact-row">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                <span>digitalpawannegi@gmail.com</span>
+            </div>
+            <div class="contact-row">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+                <span>+91 9876543210</span> </div>
+        </div>
+
+        <div class="footer-links">
+            <a href="#">Terms & Conditions</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Refund Policy</a>
+        </div>
     </div>
 </div>
 
 </body>
-  </html>
-  
+</html>
