@@ -71,7 +71,6 @@
 
         <!-- Profile Card with Photo -->
         <div class="profile-card">
-            <!-- यहाँ pawan.jpg आपकी फोटो का नाम है -->
             <img src="pawan.png" alt="Pawan Negi" class="profile-img-tag">
             <div class="profile-info">
                 <h3>Pawan Media Service</h3>
@@ -114,8 +113,11 @@
                 const email = document.getElementById('userEmail').value;
                 const phone = document.getElementById('userPhone').value;
                 
+                // Razorpay Payment Page URL के साथ प्री-फिल पैरामीटर्स (prefill.name, prefill.email, prefill.contact फॉर्मेट)
                 const rzpBaseUrl = "https://rzp.io/rzp/Smm-Masterclass";
-                const finalUrl = `${rzpBaseUrl}?name=${encodeURIComponent(name)}&email=${encodeURIComponent(email)}&contact=${encodeURIComponent(phone)}`;
+                
+                // सही Razorpay URL पैरामीटर्स जोड़ना
+                const finalUrl = `${rzpBaseUrl}?fulfill=1&name=${encodeURIComponent(name)}&email=${encodeURIComponent(email)}&phone=${encodeURIComponent(phone)}`;
                 
                 window.location.href = finalUrl;
             });
@@ -130,7 +132,7 @@
         <div class="timings">
             <h3>Masterclass Timings:</h3>
             <div class="timing-row">
-                📅 <span>10 September(Thursday)</span>
+                📅 <span>10 September (Thursday)</span>
             </div>
             <div class="timing-row">
                 ⏰ <span>11:00 AM</span>
