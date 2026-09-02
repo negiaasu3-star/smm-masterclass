@@ -60,6 +60,8 @@
         .footer-links { display: flex; justify-content: center; gap: 15px; border-top: 1px solid #e5e7eb; padding-top: 20px; margin-top: 20px; }
         .footer-links a { color: #6b7280; text-decoration: none; font-size: 12px; }
     </style>
+    <!-- Razorpay Checkout Script -->
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 </head>
 <body>
 
@@ -113,13 +115,30 @@
                 const email = document.getElementById('userEmail').value;
                 const phone = document.getElementById('userPhone').value;
                 
-                // Razorpay Payment Page URL के साथ प्री-फिल पैरामीटर्स (prefill.name, prefill.email, prefill.contact फॉर्मेट)
-                const rzpBaseUrl = "https://rzp.io/rzp/Smm-Masterclass";
+                var options = {
+                    "key": "rzp_live_TXIVZPRUOFKELJ",
+                    "amount": "5200", // ₹52 (पैसे में 5200)
+                    "currency": "INR",
+                    "name": "Pawan Media Service",
+                    "description": "SMM Business Masterclass Registration",
+                    "image": "pawan.png",
+                    "handler": function (response){
+                        alert("Payment Successful! Payment ID: " + response.razorpay_payment_id);
+                        // आपका WhatsApp चैनल लिंक यहाँ सेट कर दिया गया है
+                        window.location.href = "https://whatsapp.com/channel/0029Vb8TMq3BPzjQS1tSZg3u"; 
+                    },
+                    "prefill": {
+                        "name": name,
+                        "email": email,
+                        "contact": phone
+                    },
+                    "theme": {
+                        "color": "#1d4ed8"
+                    }
+                };
                 
-                // सही Razorpay URL पैरामीटर्स जोड़ना
-                const finalUrl = `${rzpBaseUrl}?fulfill=1&name=${encodeURIComponent(name)}&email=${encodeURIComponent(email)}&phone=${encodeURIComponent(phone)}`;
-                
-                window.location.href = finalUrl;
+                var rzp1 = new Razorpay(options);
+                rzp1.open();
             });
         </script>
 
